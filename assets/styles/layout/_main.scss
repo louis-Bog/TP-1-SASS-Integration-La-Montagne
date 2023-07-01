@@ -1,3 +1,61 @@
-img {
-    width: 50%;
+main {
+    background: $white1;
+    width: 85%;
+    margin: 0 auto 30px;
+
+    img {
+        width: 100%;
+    }
+
+    .section1 {
+        width: 80%;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    
+        span {
+            width: 100%;
+            position: relative;
+            padding: 70px 0;
+            display: block;
+    
+            &::before, 
+            &::after {
+                content: "";
+                position: absolute;
+                width: 37%;
+                height: 1px;
+                background: $grey1;
+                top: 50%;
+                transform: translateY(-50%);
+
+                @media screen and (max-width: 700px) {
+                    width: 30%;
+                }
+                @media screen and (max-width: 500px) {
+                    width: 25%;
+                }
+            }
+            &::before {
+                left: 0;
+            }
+            &::after {
+                right: 0;
+            }
+        }
+        h2 {
+            @include title;
+            font-size: 3rem;
+        }
+        p {
+            width: 60%;
+            margin: 30px auto;line-height: 35px;
+            font-style: italic;
+            font-size: 0.8rem;
+        }
+        .btn {
+            margin: 50px 0 90px;
+        }
+    }
 }
